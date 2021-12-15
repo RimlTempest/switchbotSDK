@@ -42,3 +42,7 @@ const client = new RemoteClient(`SwitchBotのトークン`);
 ```
 
 こうすることで呼び出すことができます。
+
+## 参考
+
+[公式SwitchBotAPIのドキュメント](https://github.com/OpenWonderLabs/SwitchBotAPI)
