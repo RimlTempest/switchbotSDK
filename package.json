@@ -1,0 +1,36 @@
+{
+  "name": "switchbotsdk",
+  "version": "0.1.0",
+  "description": "switchbotをtypescriptで操作するsdkです。",
+  "author": "riml",
+  "license": "MIT",
+
+  "main": "index.js",
+  "types": "index.d.ts",
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RimlTempest/switchbotSDK.git"
+  },
+  "keywords": [
+    "typescript",
+    "switchbot",
+    "nodejs"
+  ],
+  "bugs": {
+    "url": "https://github.com/RimlTempest/switchbotSDK/issues"
+  },
+  "homepage": "https://github.com/RimlTempest/switchbotSDK#readme",
+
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+  "dependencies": {
+    "axios": "^0.24.0",
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {}
+}
