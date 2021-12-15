@@ -1,3 +1,3 @@
 export { SwitchBotClient } from './client';
-export { DeviceCommand } from './deviceCommand';
-export { RemoteCommand } from './remoteCommand';
+export { DeviceClient } from './deviceCommand';
+export { RemoteClient } from './remoteCommand';
