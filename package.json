@@ -1,36 +1,50 @@
 {
-  "name": "switchbotsdk",
-  "version": "0.1.0",
-  "description": "switchbotをtypescriptで操作するsdkです。",
-  "author": "riml",
-  "license": "MIT",
-
-  "main": "index.js",
-  "types": "index.d.ts",
-
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/RimlTempest/switchbotSDK.git"
-  },
-  "keywords": [
-    "typescript",
-    "switchbot",
-    "nodejs"
-  ],
-  "bugs": {
-    "url": "https://github.com/RimlTempest/switchbotSDK/issues"
-  },
-  "homepage": "https://github.com/RimlTempest/switchbotSDK#readme",
-
-  "scripts": {
-    "build": "tsc",
-    "prepublishOnly": "npm run build",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-
-  "dependencies": {
-    "axios": "^0.24.0",
-    "typescript": "^4.5.4"
-  },
-  "devDependencies": {}
+    "name": "switchbotsdk",
+    "version": "0.1.0",
+    "description": "switchbotをtypescriptで操作するsdkです。",
+    "author": "riml/daiki takahashi <riml.slime@gmail.com>",
+    "license": "MIT",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/RimlTempest/switchbotSDK.git"
+    },
+    "keywords": [
+        "typescript",
+        "switchbot",
+        "nodejs"
+    ],
+    "bugs": {
+        "url": "https://github.com/RimlTempest/switchbotSDK/issues"
+    },
+    "homepage": "https://github.com/RimlTempest/switchbotSDK#readme",
+    "scripts": {
+        "build": "tsc",
+        "tsc:type": "tsc --noEmit",
+        "prepublishOnly": "npm run build",
+        "lint": "eslint --ext .ts ./src/",
+        "format": "prettier --write \"./src/**/*.ts\"",
+        "test": "npm run tsc:type && npm run lint && npm run test:jest",
+        "test:jest": "jest"
+    },
+    "dependencies": {
+        "axios": "^0.24.0",
+        "typescript": "^4.5.4"
+    },
+    "devDependencies": {
+        "@types/axios": "^0.14.0",
+        "@types/jest": "^27.0.1",
+        "@typescript-eslint/eslint-plugin": "^4.28.2",
+        "@typescript-eslint/parser": "^4.28.2",
+        "eslint": "^7.30.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-jest": "^24.1.3",
+        "eslint-plugin-prettier": "^3.4.0",
+        "jest": "^27.0.6",
+        "nock": "^13.2.1",
+        "prettier": "^2.3.2",
+        "ts-jest": "^27.0.3",
+        "ts-node": "^10.0.0"
+    }
 }
