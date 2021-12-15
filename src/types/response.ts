@@ -1,5 +1,5 @@
 export type SDKResponse = {
-    command: string
-    statusCode: number
-    message: string,
+    command: string;
+    statusCode: number;
+    message: string;
 };
