@@ -98,6 +98,6 @@
     // "skipDefaultLibCheck": true,                      /* Skip type checking .d.ts files that are included with TypeScript. */
     "skipLibCheck": true                                 /* Skip type checking all .d.ts files. */
   },
-  "include": ["src/**/*.ts"],  // 追加：コンパイル対象のファイル 。srcフォルダの*.tsファイルを対象
-  "exclude": ["src/**/*.spec.ts"]  // 追加：コンパイル対象外のファイル。テストコード(*.spec.ts)は含めない
+  "include": ["./src/**/*.ts"],  // 追加：コンパイル対象のファイル 。srcフォルダの*.tsファイルを対象
+  "exclude": ["./src/**/*.spec.ts", "./dist"]  // 追加：コンパイル対象外のファイル。テストコード(*.spec.ts)は含めない
 }
