@@ -1,5 +1,6 @@
 import { SwitchBotClient } from './client';
 import { AllStatus, HumidifierMode, SetPositionMode } from './types/device';
+import { SDKResponse } from './types/response';
 
 export class DeviceClient extends SwitchBotClient {
   constructor(token: string) {
@@ -7,16 +8,11 @@ export class DeviceClient extends SwitchBotClient {
   }
 
   // SwitchBot
-  public async setSwitchBot(deviceId: string, power: 'on' | 'off' = 'on') {
-    const command = power === 'on' ? 'turnOn' : 'turnOff';
-    return this.setCommand(deviceId, {
-      command: command,
-      commandParam: 'default',
-      commandType: 'command',
-    });
+  public async setSwitchBot(deviceId: string, power: 'on' | 'off' = 'on'): Promise<SDKResponse> {
+    return this.turn(deviceId, power);
   }
 
-  public async pressSwitchBot(deviceId: string) {
+  public async pressSwitchBot(deviceId: string): Promise<SDKResponse> {
     return this.setCommand(deviceId, {
       command: 'press',
       commandParam: 'default',
@@ -25,17 +21,12 @@ export class DeviceClient extends SwitchBotClient {
   }
 
   // スマートプラグ
-  public async setPlug(deviceId: string, power: 'on' | 'off' = 'on') {
-    const command = power === 'on' ? 'turnOn' : 'turnOff';
-    return this.setCommand(deviceId, {
-      command: command,
-      commandParam: 'default',
-      commandType: 'command',
-    });
+  public async setPlug(deviceId: string, power: 'on' | 'off' = 'on'): Promise<SDKResponse> {
+    return this.turn(deviceId, power);
   }
 
   // カーテン
-  public async setCurtainPosition(deviceId: string, position: SetPositionMode) {
+  public async setCurtainPosition(deviceId: string, position: SetPositionMode): Promise<SDKResponse> {
     return this.setCommand(deviceId, {
       command: 'setPosition',
       // index0,mode0,position0 e.g. 0,ff,80
@@ -44,17 +35,12 @@ export class DeviceClient extends SwitchBotClient {
     });
   }
 
-  public async setCurtain(deviceId: string, power: 'on' | 'off' = 'on') {
-    const command = power === 'on' ? 'turnOn' : 'turnOff';
-    return this.setCommand(deviceId, {
-      command: command,
-      commandParam: 'default',
-      commandType: 'command',
-    });
+  public async setCurtain(deviceId: string, power: 'on' | 'off' = 'on'): Promise<SDKResponse> {
+    return this.turn(deviceId, power);
   }
 
   // 加湿器
-  public async setHumidifierMode(deviceId: string, mode: HumidifierMode) {
+  public async setHumidifierMode(deviceId: string, mode: HumidifierMode): Promise<SDKResponse> {
     return this.setCommand(deviceId, {
       command: 'setMode',
       commandParam: mode,
@@ -62,17 +48,12 @@ export class DeviceClient extends SwitchBotClient {
     });
   }
 
-  public async setHumidifier(deviceId: string, power: 'on' | 'off' = 'on') {
-    const command = power === 'on' ? 'turnOn' : 'turnOff';
-    return this.setCommand(deviceId, {
-      command: command,
-      commandParam: 'default',
-      commandType: 'command',
-    });
+  public async setHumidifier(deviceId: string, power: 'on' | 'off' = 'on'): Promise<SDKResponse> {
+    return this.turn(deviceId, power);
   }
 
   // スマートファン
-  public async setSmartFanAllStatus(deviceId: string, status: AllStatus) {
+  public async setSmartFanAllStatus(deviceId: string, status: AllStatus): Promise<SDKResponse> {
     return this.setCommand(deviceId, {
       command: 'setAllStatus',
       commandParam: status,
@@ -80,26 +61,16 @@ export class DeviceClient extends SwitchBotClient {
     });
   }
 
-  public async setSmartFan(deviceId: string, power: 'on' | 'off' = 'on') {
-    const command = power === 'on' ? 'turnOn' : 'turnOff';
-    return this.setCommand(deviceId, {
-      command: command,
-      commandParam: 'default',
-      commandType: 'command',
-    });
+  public async setSmartFan(deviceId: string, power: 'on' | 'off' = 'on'): Promise<SDKResponse> {
+    return this.turn(deviceId, power);
   }
 
   // カラー電球デバイス
-  public async setColorBulb(deviceId: string, power: 'on' | 'off' = 'on') {
-    const command = power === 'on' ? 'turnOn' : 'turnOff';
-    return this.setCommand(deviceId, {
-      command: command,
-      commandParam: 'default',
-      commandType: 'command',
-    });
+  public async setColorBulb(deviceId: string, power: 'on' | 'off' = 'on'): Promise<SDKResponse> {
+    return this.turn(deviceId, power);
   }
 
-  public async setColorBulbBrightness(deviceId: string, brightness: number) {
+  public async setColorBulbBrightness(deviceId: string, brightness: number): Promise<SDKResponse> {
     return this.setCommand(deviceId, {
       command: 'setBrightness',
       commandParam: brightness,
@@ -112,7 +83,7 @@ export class DeviceClient extends SwitchBotClient {
     r: number,
     g: number,
     b: number,
-  ) {
+  ): Promise<SDKResponse> {
     return this.setCommand(deviceId, {
       command: 'setColor',
       commandParam: `${r}:${g}:${b}`,
@@ -120,7 +91,7 @@ export class DeviceClient extends SwitchBotClient {
     });
   }
 
-  public async toggleColorBulb(deviceId: string) {
+  public async toggleColorBulb(deviceId: string): Promise<SDKResponse> {
     return this.setCommand(deviceId, {
       command: 'toggle',
       commandParam: 'default',
@@ -131,7 +102,7 @@ export class DeviceClient extends SwitchBotClient {
   public async setColorBulbColorTemperature(
     deviceId: string,
     temperature: number,
-  ) {
+  ): Promise<SDKResponse> {
     return this.setCommand(deviceId, {
       command: 'setColorTemperature',
       // 2700~6500

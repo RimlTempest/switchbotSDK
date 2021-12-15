@@ -5,6 +5,7 @@ import {
   deviceStatusResponse,
 } from './types/device';
 import { commandRemoteRequest } from './types/remote';
+import { SDKResponse } from './types/response';
 
 export class SwitchBotClient {
   #token: string;
@@ -41,8 +42,44 @@ export class SwitchBotClient {
     return device;
   }
 
+  // コマンド
+  protected async setCommand(
+    deviceId: string,
+    command: commandDeviceRequest | commandRemoteRequest,
+  ): Promise<SDKResponse> {
+    let resultMessage = '';
+    if (!deviceId) {
+      throw new Error('no deviceId');
+    }
+    const devices: AxiosResponse<deviceResponse> = await this.#http.post(
+      `/devices/${deviceId}/commands`,
+      {
+        command: command.command,
+        parameter: command.commandParam,
+        commandType: 'command',
+      },
+    );
+
+    resultMessage = this.#errorHandler(devices.status);
+
+    return {
+      command: command.command,
+      statusCode: devices.status,
+      message: resultMessage ? resultMessage : devices.data.message,
+    };
+  }
+
+  protected turn(deviceId: string, power: 'on' | 'off' = 'on'): Promise<SDKResponse> {
+    const command = power === 'on' ? 'turnOn' : 'turnOff';
+    return this.setCommand(deviceId, {
+      command: command,
+      commandParam: 'default',
+      commandType: 'command',
+    });
+  }
+
   // エラーハンドリング
-  #errorHandler(statusCode: number) {
+  #errorHandler(statusCode: number): string {
     let resultMessage = '';
     switch (statusCode) {
       case 151:
@@ -106,32 +143,5 @@ export class SwitchBotClient {
         break;
     }
     return resultMessage;
-  }
-
-  // コマンド
-  protected async setCommand(
-    deviceId: string,
-    command: commandDeviceRequest | commandRemoteRequest,
-  ) {
-    let resultMessage = '';
-    if (!deviceId) {
-      throw new Error('no deviceId');
-    }
-    const devices: AxiosResponse<deviceResponse> = await this.#http.post(
-      `/devices/${deviceId}/commands`,
-      {
-        command: command.command,
-        parameter: command.commandParam,
-        commandType: 'command',
-      },
-    );
-
-    resultMessage = this.#errorHandler(devices.status);
-
-    return {
-      command: command.command,
-      statusCode: devices.status,
-      message: resultMessage ? resultMessage : devices.data.message,
-    };
   }
 }
