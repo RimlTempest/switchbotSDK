@@ -1,7 +1,7 @@
 import { SwitchBotClient } from './client';
 import { SetAll, SetChannel } from './types/remote';
 
-export class RemoteCommand extends SwitchBotClient {
+export class RemoteClient extends SwitchBotClient {
   constructor(token: string) {
     super(token);
   }

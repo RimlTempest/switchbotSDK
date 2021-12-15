@@ -1,7 +1,7 @@
 import { SwitchBotClient } from './client';
 import { AllStatus, HumidifierMode, SetPositionMode } from './types/device';
 
-export class DeviceCommand extends SwitchBotClient {
+export class DeviceClient extends SwitchBotClient {
   constructor(token: string) {
     super(token);
   }
