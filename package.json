@@ -1,11 +1,11 @@
 {
-    "name": "switchbotsdk",
-    "version": "0.1.1",
+    "name": "@RimlTempest/switchbotSDK",
+    "version": "0.1.4",
     "description": "switchbotをtypescriptで操作するsdkです。現在β版です。",
     "author": "riml/daiki takahashi <riml.slime@gmail.com>",
     "license": "MIT",
-    "main": "index.js",
-    "types": "index.d.ts",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/RimlTempest/switchbotSDK.git"
@@ -19,6 +19,9 @@
         "url": "https://github.com/RimlTempest/switchbotSDK/issues"
     },
     "homepage": "https://github.com/RimlTempest/switchbotSDK#readme",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
     "scripts": {
         "build": "tsc",
         "tsc:type": "tsc --noEmit",
