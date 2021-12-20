@@ -34,7 +34,7 @@ jobs:
 
             # パッケージとして公開する
             - name: publish
-              run: npx can-npm-publish --verbose && npm publish || echo "No need to publish"
+              run: npm publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
