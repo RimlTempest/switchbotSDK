@@ -10,19 +10,19 @@ const COMMANDS_PATH = `${CLIENT_PATH}/${SWITCHBOT_MOCKID}/commands`;
 
 beforeEach(() => {
     nock(ENDPOINT)
-        .get(COMMANDS_PATH)
+        .post(COMMANDS_PATH)
         .reply(200, {
             command: 'turnOn',
             statusCode: 100,
             message: '',
         })
-        .get(COMMANDS_PATH)
+        .post(COMMANDS_PATH)
         .reply(200, {
             command: 'turnOff',
             statusCode: 100,
             message: '',
         })
-        .get(COMMANDS_PATH)
+        .post(COMMANDS_PATH)
         .reply(200, {
             command: 'press',
             statusCode: 100,
@@ -43,7 +43,7 @@ describe('SwithBotのBotの電源', () => {
 
         expect(response).toEqual({
             command: 'turnOn',
-            statusCode: 100,
+            statusCode: 200,
             message: '',
         });
     });
@@ -55,7 +55,7 @@ describe('SwithBotのBotの電源', () => {
 
         expect(response).toEqual({
             command: 'turnOff',
-            statusCode: 100,
+            statusCode: 200,
             message: '',
         });
     });
@@ -70,7 +70,7 @@ describe('SwithBotのBotの電源（押すモード）', () => {
 
         expect(response).toEqual({
             command: 'press',
-            statusCode: 100,
+            statusCode: 200,
             message: '',
         });
     });
