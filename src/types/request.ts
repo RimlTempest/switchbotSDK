@@ -1,8 +1,8 @@
 import {
     AllStatus,
-    DeviceCommand,
-    DeviceCommandType,
     DeviceType,
+    DeviceCommandType,
+    DeviceCommand,
     HumidifierMode,
     SetPositionMode,
 } from './device';
@@ -13,19 +13,14 @@ export type commandDeviceRequest = {
     device?: DeviceType;
     commandType: DeviceCommandType;
     command: DeviceCommand;
-    commandParam:
-        | string
-        | number
-        | SetPositionMode
-        | HumidifierMode
-        | AllStatus;
+    parameter: string | number | SetPositionMode | HumidifierMode | AllStatus;
 };
 
 // remote Request
 export type commandRemoteRequest = {
     commandType: RemoteCommandType;
     command: RemoteCommand;
-    commandParam: string | number | SetAll | SetChannel;
+    parameter: string | number | SetAll | SetChannel;
 };
 
 export type switchRequest = 'on' | 'off';

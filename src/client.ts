@@ -1,4 +1,4 @@
-import axios, { AxiosResponse, AxiosInstance } from 'axios';
+import axios, { AxiosResponse, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { commandDeviceRequest, commandRemoteRequest } from './types/request';
 import {
     deviceResponse,
