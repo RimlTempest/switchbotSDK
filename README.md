@@ -44,7 +44,7 @@ await client.setSwitchBot(deviceId, 'off');
 こちらは`SwitchBotHub`を利用した`赤外線デバイス`を利用する場合のクライアントになります。
 
 ```ts
-import { RemoteClient } from 'switchbotadk';
+import { RemoteClient } from 'switchbotsdk';
 
 const client = new RemoteClient(`SwitchBotのトークン`);
 // 赤外線デバイスは
