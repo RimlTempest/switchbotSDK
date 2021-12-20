@@ -18,7 +18,7 @@ export class DeviceClient extends SwitchBotClient {
     public async pressSwitchBot(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'press',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -39,7 +39,7 @@ export class DeviceClient extends SwitchBotClient {
         return this.setCommand(deviceId, {
             command: 'setPosition',
             // index0,mode0,position0 e.g. 0,ff,80
-            commandParam: position,
+            parameter: position,
             commandType: 'command',
         });
     }
@@ -58,7 +58,7 @@ export class DeviceClient extends SwitchBotClient {
     ): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'setMode',
-            commandParam: mode,
+            parameter: mode,
             commandType: 'command',
         });
     }
@@ -77,7 +77,7 @@ export class DeviceClient extends SwitchBotClient {
     ): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'setAllStatus',
-            commandParam: status,
+            parameter: status,
             commandType: 'command',
         });
     }
@@ -103,7 +103,7 @@ export class DeviceClient extends SwitchBotClient {
     ): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'setBrightness',
-            commandParam: brightness,
+            parameter: brightness,
             commandType: 'command',
         });
     }
@@ -116,7 +116,7 @@ export class DeviceClient extends SwitchBotClient {
     ): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'setColor',
-            commandParam: `${r}:${g}:${b}`,
+            parameter: `${r}:${g}:${b}`,
             commandType: 'command',
         });
     }
@@ -124,7 +124,7 @@ export class DeviceClient extends SwitchBotClient {
     public async toggleColorBulb(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'toggle',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -136,7 +136,7 @@ export class DeviceClient extends SwitchBotClient {
         return this.setCommand(deviceId, {
             command: 'setColorTemperature',
             // 2700~6500
-            commandParam: temperature,
+            parameter: temperature,
             commandType: 'command',
         });
     }

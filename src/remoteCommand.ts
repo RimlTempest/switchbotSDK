@@ -22,7 +22,7 @@ export class RemoteClient extends SwitchBotClient {
     ): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: command,
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'customize',
         });
     }
@@ -34,7 +34,7 @@ export class RemoteClient extends SwitchBotClient {
     ): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'setAll',
-            commandParam: setting,
+            parameter: setting,
             commandType: 'command',
         });
     }
@@ -46,7 +46,7 @@ export class RemoteClient extends SwitchBotClient {
     ): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'SetChannel',
-            commandParam: command,
+            parameter: command,
             commandType: 'command',
         });
     }
@@ -55,7 +55,7 @@ export class RemoteClient extends SwitchBotClient {
     public setVolumeAdd(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'volumeAdd',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -63,7 +63,7 @@ export class RemoteClient extends SwitchBotClient {
     public setVolumeSub(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'volumeSub',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -71,7 +71,7 @@ export class RemoteClient extends SwitchBotClient {
     public setChannelAdd(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'channelAdd',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -79,7 +79,7 @@ export class RemoteClient extends SwitchBotClient {
     public setChannelSub(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'channelSub',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -87,7 +87,7 @@ export class RemoteClient extends SwitchBotClient {
     public setMute(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'setMute',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -95,7 +95,7 @@ export class RemoteClient extends SwitchBotClient {
     public setFastForward(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'FastForward',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -103,7 +103,7 @@ export class RemoteClient extends SwitchBotClient {
     public setRewind(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'Rewind',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -111,7 +111,7 @@ export class RemoteClient extends SwitchBotClient {
     public setNext(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'Next',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -119,7 +119,7 @@ export class RemoteClient extends SwitchBotClient {
     public setPrevious(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'Previous',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -127,7 +127,7 @@ export class RemoteClient extends SwitchBotClient {
     public setPause(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'Pause',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -135,7 +135,7 @@ export class RemoteClient extends SwitchBotClient {
     public setPlay(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'Play',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -143,7 +143,7 @@ export class RemoteClient extends SwitchBotClient {
     public setStop(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'Stop',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -151,7 +151,7 @@ export class RemoteClient extends SwitchBotClient {
     public setSwing(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'swing',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -159,7 +159,7 @@ export class RemoteClient extends SwitchBotClient {
     public setTimer(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'timer',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -167,7 +167,7 @@ export class RemoteClient extends SwitchBotClient {
     public setLowSpeed(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'lowSpeed',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -175,7 +175,7 @@ export class RemoteClient extends SwitchBotClient {
     public middleLowSpeed(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'middleSpeed',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -183,7 +183,7 @@ export class RemoteClient extends SwitchBotClient {
     public highLowSpeed(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'highSpeed',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -191,7 +191,7 @@ export class RemoteClient extends SwitchBotClient {
     public highBrightnessUp(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'brightnessUp',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
@@ -199,7 +199,7 @@ export class RemoteClient extends SwitchBotClient {
     public highBrightnessDown(deviceId: string): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'brightnessDown',
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }

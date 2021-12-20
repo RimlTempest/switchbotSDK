@@ -1,7 +1,7 @@
 import { AxiosResponse } from 'axios';
 import nock from 'nock';
 import { SwitchBotClient } from '../client';
-import { deviceResponse, deviceStatusResponse } from '../types/device';
+import { deviceResponse, deviceStatusResponse } from '../types/response';
 
 const ACCESS_TOKEN = 'mockToken';
 const SWITCHBOT_MOCKID = 'SwitchBotId';
