@@ -1,5 +1,6 @@
 import { SwitchBotClient } from './client';
 import { SetAll, SetChannel } from './types/remote';
+import { switchRequest } from './types/request';
 import { SDKResponse } from './types/response';
 
 export class RemoteClient extends SwitchBotClient {
@@ -10,7 +11,7 @@ export class RemoteClient extends SwitchBotClient {
     // 赤外線リモコンは共通でオンオフ可能
     public async setRemoteDevice(
         deviceId: string,
-        power: 'on' | 'off' = 'on',
+        power: switchRequest = 'on',
     ): Promise<SDKResponse> {
         return this.turn(deviceId, power);
     }

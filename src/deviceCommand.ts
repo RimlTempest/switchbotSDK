@@ -1,5 +1,6 @@
 import { SwitchBotClient } from './client';
 import { AllStatus, HumidifierMode, SetPositionMode } from './types/device';
+import { switchRequest } from './types/request';
 import { SDKResponse } from './types/response';
 
 export class DeviceClient extends SwitchBotClient {
@@ -10,7 +11,7 @@ export class DeviceClient extends SwitchBotClient {
     // SwitchBot
     public async setSwitchBot(
         deviceId: string,
-        power: 'on' | 'off' = 'on',
+        power: switchRequest = 'on',
     ): Promise<SDKResponse> {
         return this.turn(deviceId, power);
     }
@@ -26,7 +27,7 @@ export class DeviceClient extends SwitchBotClient {
     // スマートプラグ
     public async setPlug(
         deviceId: string,
-        power: 'on' | 'off' = 'on',
+        power: switchRequest = 'on',
     ): Promise<SDKResponse> {
         return this.turn(deviceId, power);
     }
@@ -46,7 +47,7 @@ export class DeviceClient extends SwitchBotClient {
 
     public async setCurtain(
         deviceId: string,
-        power: 'on' | 'off' = 'on',
+        power: switchRequest = 'on',
     ): Promise<SDKResponse> {
         return this.turn(deviceId, power);
     }
@@ -65,7 +66,7 @@ export class DeviceClient extends SwitchBotClient {
 
     public async setHumidifier(
         deviceId: string,
-        power: 'on' | 'off' = 'on',
+        power: switchRequest = 'on',
     ): Promise<SDKResponse> {
         return this.turn(deviceId, power);
     }
@@ -84,7 +85,7 @@ export class DeviceClient extends SwitchBotClient {
 
     public async setSmartFan(
         deviceId: string,
-        power: 'on' | 'off' = 'on',
+        power: switchRequest = 'on',
     ): Promise<SDKResponse> {
         return this.turn(deviceId, power);
     }
@@ -92,7 +93,7 @@ export class DeviceClient extends SwitchBotClient {
     // カラー電球デバイス
     public async setColorBulb(
         deviceId: string,
-        power: 'on' | 'off' = 'on',
+        power: switchRequest = 'on',
     ): Promise<SDKResponse> {
         return this.turn(deviceId, power);
     }

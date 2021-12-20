@@ -17,7 +17,7 @@ export type DeviceType =
     | 'Humidifier'
     | 'Smart Fan';
 
-export type Command =
+export type DeviceCommand =
     | 'turnOn'
     | 'turnOff'
     | 'press'
@@ -29,19 +29,7 @@ export type Command =
     | 'setColor'
     | 'setColorTemperature';
 
-export type CommandType = 'command';
-
-export type commandDeviceRequest = {
-    device?: DeviceType;
-    commandType: CommandType;
-    command: Command;
-    commandParam:
-        | string
-        | number
-        | SetPositionMode
-        | HumidifierMode
-        | AllStatus;
-};
+export type DeviceCommandType = 'command';
 
 // auto or 101 or 102 or 103 or {0~100}
 export type HumidifierMode = 'auto' | 101 | 102 | 103 | number;
@@ -74,25 +62,15 @@ type CurtainDevice = {
 };
 
 // SwitchBotのデバイス
-type DeviceList = DeviceBase &
+export type DeviceList = DeviceBase &
     CurtainDevice & {
         deviceType: DeviceType;
         enableCloudService?: boolean;
     };
 
 // 赤外線リモコン
-type infraredRemoteList = DeviceBase & {
+export type infraredRemoteList = DeviceBase & {
     remoteType: string;
-};
-
-// 全デバイス取得のレスポンス
-export type deviceResponse = {
-    statusCode: number;
-    body?: {
-        deviceList: DeviceList[];
-        infraredRemoteList: infraredRemoteList[];
-    };
-    message: string;
 };
 
 type DeviceStatusBase = Omit<DeviceBase, 'deviceName'>;
@@ -151,7 +129,7 @@ type ColorBulbStatus = {
     colorTemperature?: number;
 };
 
-type DeviceStatusType = DeviceStatusBase &
+export type DeviceStatusType = DeviceStatusBase &
     BotStatus &
     MeterOrHumidifierStatus &
     HumidifierStatus &
@@ -162,10 +140,3 @@ type DeviceStatusType = DeviceStatusBase &
     ColorBulbStatus & {
         deviceType: DeviceType;
     };
-
-// 各デバイスのステータス取得のレスポンス
-export type deviceStatusResponse = {
-    statusCode: number;
-    body?: DeviceStatusType;
-    message: string;
-};

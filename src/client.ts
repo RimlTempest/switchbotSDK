@@ -1,7 +1,10 @@
-import axios, { AxiosResponse, AxiosInstance, AxiosRequestConfig } from 'axios';
+import axios, { AxiosResponse, AxiosInstance } from 'axios';
 import { commandDeviceRequest, commandRemoteRequest } from './types/request';
-import { deviceResponse, deviceStatusResponse } from './types/device';
-import { SDKResponse } from './types/response';
+import {
+    deviceResponse,
+    deviceStatusResponse,
+    SDKResponse,
+} from './types/response';
 
 export class SwitchBotClient {
     #token: string;
