@@ -25,9 +25,11 @@ export class SwitchBotClient {
     }
     // 全デバイスの取得
     public async getDevices(): Promise<AxiosResponse<deviceResponse>> {
-        const device: AxiosResponse<deviceResponse> = await this.#http.get(
-            '/devices',
-        );
+        const options: AxiosRequestConfig = {
+            url: `/devices`,
+            method: 'GET',
+        };
+        const device: AxiosResponse<deviceResponse> = await this.#http(options);
         return device;
     }
 
@@ -35,8 +37,13 @@ export class SwitchBotClient {
     public async getDevice(
         deviceId: string,
     ): Promise<AxiosResponse<deviceStatusResponse>> {
-        const device: AxiosResponse<deviceStatusResponse> =
-            await this.#http.get(`/devices/${deviceId}/status`);
+        const options: AxiosRequestConfig = {
+            url: `/devices/${deviceId}/status`,
+            method: 'GET',
+        };
+        const device: AxiosResponse<deviceStatusResponse> = await this.#http(
+            options,
+        );
         return device;
     }
 
@@ -53,7 +60,7 @@ export class SwitchBotClient {
             `/devices/${deviceId}/commands`,
             {
                 command: command.command,
-                parameter: command.commandParam,
+                parameter: command.parameter,
                 commandType: 'command',
             },
         );
@@ -74,7 +81,7 @@ export class SwitchBotClient {
         const command = power === 'on' ? 'turnOn' : 'turnOff';
         return this.setCommand(deviceId, {
             command: command,
-            commandParam: 'default',
+            parameter: 'default',
             commandType: 'command',
         });
     }
