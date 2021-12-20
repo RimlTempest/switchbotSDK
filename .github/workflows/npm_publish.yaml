@@ -32,11 +32,8 @@ jobs:
             - name: npm installを行う
               run: npm install
 
-            - name: can-npm-publishを導入
-              run: npm install can-npm-publish
-
             - name: npm上のバージョンを確認する
-              run: npm can-npm-publish
+              run: npx can-npm-publish --verbose
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
