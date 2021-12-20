@@ -32,7 +32,7 @@ jobs:
               run: npm install can-npm-publish
 
             - name: github release上のバージョンを確認する
-              run: npm can-npm-publish --verbose
+              run: npm can-npm-publish
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
