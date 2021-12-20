@@ -1,6 +1,6 @@
-export type CommandType = 'command' | 'customize';
+export type RemoteCommandType = 'command' | 'customize';
 
-export type Command =
+export type RemoteCommand =
     | 'turnOn'
     | 'turnOff'
     | 'setAll'
@@ -25,12 +25,6 @@ export type Command =
     | 'brightnessUp'
     | 'brightnessDown'
     | string;
-
-export type commandRemoteRequest = {
-    commandType: CommandType;
-    command: Command;
-    commandParam: string | number | SetAll | SetChannel;
-};
 
 export type SetAll = {
     powerState: 'on' | 'off';
