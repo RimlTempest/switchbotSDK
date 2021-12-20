@@ -1,2 +1,10 @@
-tsconfig.json
+.vscode
 src
+node_modules
+tsconfig.json
+tsconfig.eslint.json
+.eslintrc.js
+.eslintignore
+.gitignore
+.prettierrc
+jest.config.js
