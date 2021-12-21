@@ -1,7 +1,7 @@
 name: reviewdog
 
 # push、PR時にreviewdogを走らせる
-on: [pull_request]
+on: [push]
 
 # reviewdogのeslintを走らせる
 jobs:
@@ -25,5 +25,5 @@ jobs:
               with:
                   github_token: ${{ secrets.github_token }}
                   reporter: github-pr-review
-                  eslint_flags: './src/**/*.{ts}'
+                  eslint_flags: './src/**/*.ts'
                   fail_on_error: 'true'
