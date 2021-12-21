@@ -1,3 +1,5 @@
+[![CI](https://github.com/RimlTempest/switchbotSDK/actions/workflows/test.yaml/badge.svg)](https://github.com/RimlTempest/switchbotSDK/actions/workflows/test.yaml)
+[![CI](https://github.com/RimlTempest/switchbotSDK/actions/workflows/reviewdog.yaml/badge.svg)](https://github.com/RimlTempest/switchbotSDK/actions/workflows/reviewdog.yaml)
 # switchbotSDK
 
 switchbotSDK とは switchbot から提供されている RestAPI を簡易的に使用ができる SDK となります。  
@@ -44,7 +46,7 @@ await client.setSwitchBot(deviceId, 'off');
 こちらは`SwitchBotHub`を利用した`赤外線デバイス`を利用する場合のクライアントになります。
 
 ```ts
-import { RemoteClient } from 'switchbotadk';
+import { RemoteClient } from 'switchbotsdk';
 
 const client = new RemoteClient(`SwitchBotのトークン`);
 // 赤外線デバイスは
