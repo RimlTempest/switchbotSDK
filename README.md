@@ -1,3 +1,5 @@
+[![CI](https://github.com/RimlTempest/switchbotSDK/actions/workflows/test.yaml/badge.svg)](https://github.com/RimlTempest/switchbotSDK/actions/workflows/test.yaml)
+[![CI](https://github.com/RimlTempest/switchbotSDK/actions/workflows/reviewdog.yaml/badge.svg)](https://github.com/RimlTempest/switchbotSDK/actions/workflows/reviewdog.yaml)
 # switchbotSDK
 
 switchbotSDK とは switchbot から提供されている RestAPI を簡易的に使用ができる SDK となります。  
