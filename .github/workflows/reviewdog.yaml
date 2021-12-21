@@ -21,10 +21,9 @@ jobs:
                   node-version: ${{ matrix.node-version }}
             - run: npm ci
             - name: eslint with reviewdog
-                uses: reviewdog/action-eslint@v1
-                with:
-                    github_token: ${{ secrets.github_token }}
-                    reporter: github-pr-review
-                    eslint_flags: './src/**/*.{ts}'
-                    fail_on_error: 'true'
-
+              uses: reviewdog/action-eslint@v1
+              with:
+                  github_token: ${{ secrets.github_token }}
+                  reporter: github-pr-review
+                  eslint_flags: './src/**/*.{ts}'
+                  fail_on_error: 'true'
