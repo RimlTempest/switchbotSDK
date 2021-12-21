@@ -1,6 +1,6 @@
 {
     "name": "@rimltempest/switchbotsdk",
-    "version": "0.1.8",
+    "version": "0.1.9",
     "description": "switchbotをtypescriptで操作するsdkです。現在β版です。",
     "author": "riml/daiki takahashi <riml.slime@gmail.com>",
     "license": "MIT",
