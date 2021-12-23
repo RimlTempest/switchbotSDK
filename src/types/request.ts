@@ -6,7 +6,7 @@ import {
     HumidifierMode,
     SetPositionMode,
 } from './device';
-import { RemoteCommand, RemoteCommandType, SetAll, SetChannel } from './remote';
+import { RemoteCommand, RemoteCommandType, SetAll } from './remote';
 
 // device Request
 export type commandDeviceRequest = {
@@ -20,7 +20,7 @@ export type commandDeviceRequest = {
 export type commandRemoteRequest = {
     commandType: RemoteCommandType;
     command: RemoteCommand;
-    parameter: string | number | SetAll | SetChannel;
+    parameter: string | number | SetAll;
 };
 
 export type switchRequest = 'on' | 'off';
