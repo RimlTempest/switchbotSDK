@@ -47,8 +47,6 @@ type response = {
 };
 ```
 
----
-
 ### setCustomizeDevice(deviceId: string, command: string)
 
 自分で設定したコマンドを実行する

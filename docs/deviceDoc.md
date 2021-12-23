@@ -41,8 +41,6 @@ type response = {
 };
 ```
 
----
-
 ### pressSwitchBot(deviceId: string)
 
 押すモードで押すを実行する

@@ -26,8 +26,6 @@ type response = {
 };
 ```
 
----
-
 ### getDevice(deviceId: string)
 
 deviceId を元にデバイスの状態を確認する
