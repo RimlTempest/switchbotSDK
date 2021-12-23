@@ -6,6 +6,12 @@
 switchbotSDK とは switchbot から提供されている RestAPI を簡易的に使用ができる SDK となります。  
 現在は`SwitchBotClient`、`DeviceClient`、`RemoteClient`がご利用できます。
 
+詳しいドキュメントは以下に記載されています。
+
+-   [SwitchBotClient 仕様書](./docs/clientDoc.md)
+-   [DeviceClient 仕様書](./docs/deviceDoc.md)
+-   [RemoteClient 仕様書](./docs/remoteDoc.md)
+
 ## 使用方法
 
 用途によって３種の関数を呼び出します。
