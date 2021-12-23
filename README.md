@@ -1,5 +1,6 @@
 [![CI](https://github.com/RimlTempest/switchbotSDK/actions/workflows/test.yaml/badge.svg)](https://github.com/RimlTempest/switchbotSDK/actions/workflows/test.yaml)
 [![CI](https://github.com/RimlTempest/switchbotSDK/actions/workflows/reviewdog.yaml/badge.svg)](https://github.com/RimlTempest/switchbotSDK/actions/workflows/reviewdog.yaml)
+
 # switchbotSDK
 
 switchbotSDK とは switchbot から提供されている RestAPI を簡易的に使用ができる SDK となります。  
@@ -14,7 +15,7 @@ switchbotSDK とは switchbot から提供されている RestAPI を簡易的�
 こちらはデバイスの状態を管理するクライアントとなります。
 
 ```ts
-import { SwitchBotClient } from 'switchbotsdk';
+import { SwitchBotClient } from '@rimltempest/switchbotsdk';
 
 const client = new SwitchBotClient(`SwitchBotのトークン`);
 
@@ -29,7 +30,7 @@ console.log(client.getDevices());
 こちらは`SwitchBotの関連デバイス(SwitchBot、スマートプラグ、加湿器など)`を利用する場合のクライアントになります。
 
 ```ts
-import { DeviceClient } from 'switchbotsdk';
+import { DeviceClient } from '@rimltempest/switchbotsdk';
 
 const client = new DeviceClient(`SwitchBotのトークン`);
 const deviceId = 'SwitchBotの端末ID';
@@ -46,7 +47,7 @@ await client.setSwitchBot(deviceId, 'off');
 こちらは`SwitchBotHub`を利用した`赤外線デバイス`を利用する場合のクライアントになります。
 
 ```ts
-import { RemoteClient } from 'switchbotsdk';
+import { RemoteClient } from '@rimltempest/switchbotsdk';
 
 const client = new RemoteClient(`SwitchBotのトークン`);
 // 赤外線デバイスは
@@ -70,7 +71,11 @@ await client.setRemoteDevice(deviceId, 'off');
 // switch-bot.service.ts
 import { Injectable } from '@nestjs/common';
 import { config } from 'dotenv';
-import { SwitchBotClient, DeviceClient, RemoteClient } from 'switchbotsdk';
+import {
+    SwitchBotClient,
+    DeviceClient,
+    RemoteClient,
+} from '@rimltempest/switchbotsdk';
 config();
 
 type PowerType = 'on' | 'off';
