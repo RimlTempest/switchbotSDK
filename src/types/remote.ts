@@ -35,4 +35,4 @@ export type SetAll = {
     fanSpeed: 1 | 2 | 3 | 4;
 };
 
-export type SetChannel = number;
+export type buttonCommand = 'up' | 'down';

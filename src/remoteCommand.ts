@@ -1,5 +1,5 @@
 import { SwitchBotClient } from './client';
-import { SetAll, SetChannel } from './types/remote';
+import { buttonCommand, SetAll } from './types/remote';
 import { switchRequest } from './types/request';
 import { SDKResponse } from './types/response';
 
@@ -43,7 +43,7 @@ export class RemoteClient extends SwitchBotClient {
     // TV, IPTV/Streamer, Set Top Box
     public async setTVChannel(
         deviceId: string,
-        command: SetChannel,
+        command: number,
     ): Promise<SDKResponse> {
         return this.setCommand(deviceId, {
             command: 'SetChannel',
@@ -53,33 +53,25 @@ export class RemoteClient extends SwitchBotClient {
     }
 
     // リモコンコマンド
-    public setVolumeAdd(deviceId: string): Promise<SDKResponse> {
+    public setVolume(
+        deviceId: string,
+        button: buttonCommand = 'up',
+    ): Promise<SDKResponse> {
+        const command = button === 'up' ? 'volumeAdd' : 'volumeSub';
         return this.setCommand(deviceId, {
-            command: 'volumeAdd',
+            command: command,
             parameter: 'default',
             commandType: 'command',
         });
     }
 
-    public setVolumeSub(deviceId: string): Promise<SDKResponse> {
+    public setChannel(
+        deviceId: string,
+        button: buttonCommand = 'up',
+    ): Promise<SDKResponse> {
+        const command = button === 'up' ? 'channelAdd' : 'channelSub';
         return this.setCommand(deviceId, {
-            command: 'volumeSub',
-            parameter: 'default',
-            commandType: 'command',
-        });
-    }
-
-    public setChannelAdd(deviceId: string): Promise<SDKResponse> {
-        return this.setCommand(deviceId, {
-            command: 'channelAdd',
-            parameter: 'default',
-            commandType: 'command',
-        });
-    }
-
-    public setChannelSub(deviceId: string): Promise<SDKResponse> {
-        return this.setCommand(deviceId, {
-            command: 'channelSub',
+            command: command,
             parameter: 'default',
             commandType: 'command',
         });
@@ -189,17 +181,13 @@ export class RemoteClient extends SwitchBotClient {
         });
     }
 
-    public highBrightnessUp(deviceId: string): Promise<SDKResponse> {
+    public setHighBrightness(
+        deviceId: string,
+        button: buttonCommand = 'up',
+    ): Promise<SDKResponse> {
+        const command = button === 'up' ? 'brightnessUp' : 'brightnessDown';
         return this.setCommand(deviceId, {
-            command: 'brightnessUp',
-            parameter: 'default',
-            commandType: 'command',
-        });
-    }
-
-    public highBrightnessDown(deviceId: string): Promise<SDKResponse> {
-        return this.setCommand(deviceId, {
-            command: 'brightnessDown',
+            command: command,
             parameter: 'default',
             commandType: 'command',
         });
