@@ -41,3 +41,35 @@ type response = {
     message: string;
 };
 ```
+
+### getScenes()
+
+シーンの情報を確認する
+
+引数: なし
+
+レスポンス
+
+```ts
+type response = {
+    statusCode: number;
+    body?: Scene[] | undefined;
+    message: string;
+};
+```
+
+### setSceneCommand(sceneId: string)
+
+sceneId を元にシーンを実行する
+
+引数: sceneId (string 型)
+
+レスポンス
+
+```ts
+type response = {
+    command: string;
+    statusCode: number;
+    message: string;
+};
+```

@@ -1,4 +1,5 @@
 import { DeviceList, DeviceStatusType, infraredRemoteList } from './device';
+import { Scene } from './scene';
 
 export type SDKResponse = {
     command: string;
@@ -20,5 +21,12 @@ export type deviceResponse = {
 export type deviceStatusResponse = {
     statusCode: number;
     body?: DeviceStatusType;
+    message: string;
+};
+
+// 全シーン取得のレスポンス
+export type scenesResponse = {
+    statusCode: number;
+    body?: Scene[];
     message: string;
 };
