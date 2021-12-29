@@ -1,9 +1,9 @@
-import { SwitchBotClient } from './client';
+import { BaseClient } from './baseClient';
 import { buttonCommand, SetAll } from './types/remote';
 import { switchRequest } from './types/request';
 import { SDKResponse } from './types/response';
 
-export class RemoteClient extends SwitchBotClient {
+export class RemoteClient extends BaseClient {
     constructor(token: string) {
         super(token);
     }
