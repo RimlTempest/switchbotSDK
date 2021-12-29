@@ -3,6 +3,7 @@ import { commandDeviceRequest, commandRemoteRequest } from './types/request';
 import {
     deviceResponse,
     deviceStatusResponse,
+    scenesResponse,
     SDKResponse,
 } from './types/response';
 
@@ -45,6 +46,39 @@ export class SwitchBotClient {
             options,
         );
         return device;
+    }
+
+    // 全シーンを取得
+    public async getScenes(): Promise<AxiosResponse<scenesResponse>> {
+        const options: AxiosRequestConfig = {
+            url: `/scenes`,
+            method: 'GET',
+        };
+        const device: AxiosResponse<scenesResponse> = await this.#http(options);
+        return device;
+    }
+
+    // シーンコマンド
+    public async setSceneCommand(sceneId: string): Promise<SDKResponse> {
+        let resultMessage = '';
+        if (!sceneId) {
+            throw new Error('no sceneId');
+        }
+        const options: AxiosRequestConfig = {
+            url: `/scenes/${sceneId}/execute`,
+            method: 'POST',
+        };
+        const devices: AxiosResponse<scenesResponse> = await this.#http(
+            options,
+        );
+
+        resultMessage = this.#errorHandler(devices.status);
+
+        return {
+            command: 'scene',
+            statusCode: devices.status,
+            message: resultMessage ? resultMessage : devices.data.message,
+        };
     }
 
     // コマンド
