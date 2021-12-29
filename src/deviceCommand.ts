@@ -1,9 +1,9 @@
-import { SwitchBotClient } from './client';
+import { BaseClient } from './baseClient';
 import { AllStatus, HumidifierMode, SetPositionMode } from './types/device';
 import { switchRequest } from './types/request';
 import { SDKResponse } from './types/response';
 
-export class DeviceClient extends SwitchBotClient {
+export class DeviceClient extends BaseClient {
     constructor(token: string) {
         super(token);
     }
