@@ -18,7 +18,8 @@ switchbotSDK とは switchbot から提供されている RestAPI を簡易的�
 
 ### SwtichBotClient
 
-こちらはデバイスの状態を管理するクライアントとなります。
+こちらはデバイスの状態を管理するクライアントとなります。  
+シーンの全取得、実行もこちらで行えます。
 
 ```ts
 import { SwitchBotClient } from '@rimltempest/switchbotsdk';
